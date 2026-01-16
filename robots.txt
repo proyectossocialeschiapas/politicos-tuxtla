@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Permitir a todos los motores de búsqueda indexar todo el sitio
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Sitemap
+Sitemap: https://TU-USUARIO.github.io/TU-REPOSITORIO/sitemap.xml
