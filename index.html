@@ -2,142 +2,269 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Figuras Políticas de Tuxtla Gutiérrez, Chiapas - Información Documentada</title>
     
     <meta name="description" content="Información documentada sobre figuras políticas de Tuxtla Gutiérrez, Chiapas: Francisco Rojas Toledo, Ángel Torres Culebro, Guillermo Santiago Rodríguez, Francisco Chacón Sánchez. Controversias, denuncias y trayectorias políticas.">
     <meta name="keywords" content="Tuxtla Gutiérrez, Chiapas, políticos, controversias, corrupción, Francisco Rojas, Ángel Torres, Guillermo Santiago, Francisco Chacón">
     
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             line-height: 1.6;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            padding: 10px;
         }
+        
         .container {
             background: white;
-            padding: 40px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
         }
+        
         h1 {
             color: #2c3e50;
             text-align: center;
             border-bottom: 4px solid #e74c3c;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            word-wrap: break-word;
         }
+        
         .intro {
             background: #f8f9fa;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             border-left: 4px solid #3498db;
+            font-size: 0.95em;
         }
+        
+        .intro p {
+            margin-bottom: 10px;
+        }
+        
+        .intro strong {
+            color: #2c3e50;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px;
+            background: #e8f4f8;
+            border-radius: 8px;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+            display: block;
+        }
+        
         .profiles {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: 1fr;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 20px;
         }
+        
         .profile-card {
             background: #fff;
             border: 2px solid #e0e0e0;
             border-radius: 8px;
-            padding: 20px;
-            transition: all 0.3s ease;
+            padding: 15px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .profile-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            border-color: #3498db;
-        }
+        
         .profile-card h2 {
             color: #2c3e50;
-            margin-top: 0;
+            margin: 0 0 10px 0;
             border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
+            font-size: 1.3em;
+            word-wrap: break-word;
         }
+        
         .profile-card .position {
             font-weight: bold;
             color: #555;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            line-height: 1.4;
         }
-        .profile-card .highlights {
-            background: #fff3cd;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
+        
+        .profile-card p {
+            margin: 8px 0;
             font-size: 0.95em;
         }
-        .profile-card .highlights strong {
-            color: #856404;
-        }
-        .profile-card a {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
+        
+        .highlights {
+            background: #fff3cd;
+            padding: 12px;
             border-radius: 5px;
-            margin-top: 10px;
-            transition: background 0.3s ease;
+            margin: 12px 0;
+            font-size: 0.9em;
         }
-        .profile-card a:hover {
-            background: #2980b9;
+        
+        .highlights strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 8px;
         }
+        
+        .highlights ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        
+        .highlights li {
+            margin: 6px 0;
+            line-height: 1.4;
+        }
+        
         .severity {
             display: inline-block;
-            padding: 5px 10px;
+            padding: 3px 8px;
             border-radius: 3px;
-            font-size: 0.85em;
+            font-size: 0.75em;
             font-weight: bold;
             margin-right: 5px;
+            white-space: nowrap;
         }
+        
         .severity-high {
             background: #dc3545;
             color: white;
         }
+        
         .severity-medium {
             background: #ffc107;
             color: #333;
         }
+        
         .severity-low {
             background: #28a745;
             color: white;
         }
+        
+        .profile-card a {
+            display: block;
+            background: #3498db;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 12px;
+            text-align: center;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .profile-card a:active {
+            background: #2980b9;
+        }
+        
         footer {
-            margin-top: 40px;
+            margin-top: 30px;
             padding-top: 20px;
             border-top: 2px solid #ddd;
-            text-align: center;
+            font-size: 0.85em;
             color: #666;
-            font-size: 0.9em;
         }
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 30px 0;
-            padding: 20px;
-            background: #e8f4f8;
-            border-radius: 8px;
+        
+        footer h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
         }
-        .stat-box {
-            text-align: center;
+        
+        footer p {
+            margin: 10px 0;
+            line-height: 1.5;
         }
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #3498db;
+        
+        /* Tablets y pantallas medianas */
+        @media (min-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .stats {
+                padding: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2.5em;
+            }
         }
-        .stat-label {
-            font-size: 0.9em;
-            color: #666;
+        
+        /* Desktop */
+        @media (min-width: 900px) {
+            body {
+                padding: 20px;
+            }
+            
+            .container {
+                padding: 40px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .profiles {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .intro {
+                padding: 20px;
+                font-size: 1em;
+            }
+            
+            .profile-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                border-color: #3498db;
+            }
+        }
+        
+        /* Pantallas muy grandes */
+        @media (min-width: 1400px) {
+            .profiles {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
         }
     </style>
 </head>
@@ -146,23 +273,23 @@
         <h1>🔍 Figuras Políticas de Tuxtla Gutiérrez, Chiapas</h1>
         
         <div class="intro">
-            <p><strong>Observatorio Político Chiapas</strong> - Este sitio recopila información documentada de fuentes públicas verificables sobre figuras políticas relevantes de Tuxtla Gutiérrez, Chiapas. Toda la información proviene de medios de comunicación establecidos, denuncias públicas oficiales, documentos de tribunales y registros gubernamentales.</p>
+            <p><strong>Observatorio Político Chiapas</strong> - Este sitio recopila información documentada de fuentes públicas verificables sobre figuras políticas relevantes de Tuxtla Gutiérrez, Chiapas.</p>
             
             <p><strong>Objetivo:</strong> Proporcionar información accesible y documentada con enlaces verificables para facilitar el escrutinio ciudadano y la toma de decisiones informadas.</p>
         </div>
 
         <div class="stats">
             <div class="stat-box">
-                <div class="stat-number">4</div>
-                <div class="stat-label">Perfiles Políticos</div>
+                <span class="stat-number">4</span>
+                <span class="stat-label">Perfiles Políticos</span>
             </div>
             <div class="stat-box">
-                <div class="stat-number">40+</div>
-                <div class="stat-label">Fuentes Documentadas</div>
+                <span class="stat-number">40+</span>
+                <span class="stat-label">Fuentes Verificables</span>
             </div>
             <div class="stat-box">
-                <div class="stat-number">2015-2026</div>
-                <div class="stat-label">Período Cubierto</div>
+                <span class="stat-number">2015-2026</span>
+                <span class="stat-label">Período Cubierto</span>
             </div>
         </div>
 
@@ -176,7 +303,7 @@
                 
                 <div class="highlights">
                     <strong>Controversias principales:</strong>
-                    <ul style="margin: 5px 0; padding-left: 20px;">
+                    <ul>
                         <li><span class="severity severity-high">ALTO</span> Video del "moche" recibiendo dinero de empresario (2015)</li>
                         <li><span class="severity severity-medium">MEDIO</span> Apodo "Paco Bono" por compensaciones económicas</li>
                         <li><span class="severity severity-medium">MEDIO</span> 4 derrotas electorales consecutivas</li>
@@ -195,11 +322,11 @@
                 
                 <div class="highlights">
                     <strong>Controversias principales:</strong>
-                    <ul style="margin: 5px 0; padding-left: 20px;">
-                        <li><span class="severity severity-high">ALTO</span> Desvío de 58 millones con empresas fantasma (2020-2022)</li>
-                        <li><span class="severity severity-high">ALTO</span> Denuncia penal por contratos irregulares 1.2 millones (2024)</li>
-                        <li><span class="severity severity-medium">MEDIO</span> Contratos sin licitación por 100 millones anuales</li>
-                        <li><span class="severity severity-medium">MEDIO</span> Falta de experiencia técnica en infraestructura</li>
+                    <ul>
+                        <li><span class="severity severity-high">ALTO</span> Desvío de 58 millones con empresas fantasma</li>
+                        <li><span class="severity severity-high">ALTO</span> Denuncia penal por contratos irregulares 1.2 millones</li>
+                        <li><span class="severity severity-medium">MEDIO</span> Contratos sin licitación 100 millones anuales</li>
+                        <li><span class="severity severity-medium">MEDIO</span> Sin experiencia técnica en infraestructura</li>
                     </ul>
                 </div>
                 
@@ -215,9 +342,9 @@
                 
                 <div class="highlights">
                     <strong>Controversias principales:</strong>
-                    <ul style="margin: 5px 0; padding-left: 20px;">
+                    <ul>
                         <li><span class="severity severity-medium">MEDIO</span> Vandalismo Wikipedia: "corrupto, mentiroso y gritón"</li>
-                        <li><span class="severity severity-medium">MEDIO</span> Arranque de campaña con menos de 150 personas</li>
+                        <li><span class="severity severity-medium">MEDIO</span> Arranque campaña con menos de 150 personas</li>
                         <li><span class="severity severity-low">BAJO</span> Admitió inexperiencia legislativa (2015)</li>
                         <li><span class="severity severity-medium">MEDIO</span> Estilo confrontacional en denuncias</li>
                     </ul>
@@ -229,16 +356,16 @@
             <!-- FRANCISCO CHACÓN SÁNCHEZ -->
             <div class="profile-card">
                 <h2>Francisco Chacón Sánchez</h2>
-                <p class="position">📍 Secretario del Humanismo | Enlace del Gobernador en Tuxtla</p>
+                <p class="position">📍 Secretario del Humanismo | Enlace del Gobernador</p>
                 <p><strong>Apodo:</strong> Paco Chacón</p>
                 <p><strong>Origen:</strong> Tuxtla Gutiérrez, Barrio Guadalupe</p>
                 
                 <div class="highlights">
                     <strong>Controversias principales:</strong>
-                    <ul style="margin: 5px 0; padding-left: 20px;">
-                        <li><span class="severity severity-medium">MEDIO</span> Vinculación con funcionario acusado de acoso sexual</li>
+                    <ul>
+                        <li><span class="severity severity-medium">MEDIO</span> Vinculación con funcionario acusado de acoso</li>
                         <li><span class="severity severity-medium">MEDIO</span> Concentración de poder en "súper secretaría"</li>
-                        <li><span class="severity severity-low">BAJO</span> Sin denuncias directas (perfil limpio hasta ahora)</li>
+                        <li><span class="severity severity-low">BAJO</span> Sin denuncias directas (perfil limpio)</li>
                     </ul>
                 </div>
                 
@@ -248,16 +375,15 @@
 
         <footer>
             <h3>Nota Legal y Metodológica</h3>
-            <p><strong>Presunción de Inocencia:</strong> Toda la información contenida en este sitio proviene de fuentes públicas verificables con enlaces directos. Las acusaciones y controversias reportadas deben ser consideradas como alegaciones que pueden estar sujetas a procesos de investigación, verificación o defensa legal. La presunción de inocencia es un principio fundamental que aplica a todas las personas mencionadas.</p>
             
-            <p><strong>Fuentes:</strong> Información recopilada de medios establecidos incluyendo La Crónica de Hoy, PORTAVOZ, El Sol de Chiapas, Cuarto Poder, Diario de Chiapas, Alerta Chiapas, El Universal, RT, Sie7e de Chiapas, ChiapasParalelo, Ultimatum Chiapas, Reporte Índigo, El Heraldo de México, Meganoticias, entre otros. Todos los enlaces son verificables.</p>
+            <p><strong>Presunción de Inocencia:</strong> Toda la información proviene de fuentes públicas verificables con enlaces directos. Las acusaciones deben considerarse alegaciones sujetas a investigación legal.</p>
+            
+            <p><strong>Fuentes:</strong> La Crónica de Hoy, PORTAVOZ, El Sol de Chiapas, Cuarto Poder, Diario de Chiapas, Alerta Chiapas, El Universal, RT, Sie7e de Chiapas, ChiapasParalelo, Ultimatum Chiapas, Reporte Índigo, entre otros.</p>
             
             <p><strong>Última actualización:</strong> 15 de enero de 2026</p>
             
-            <p><strong>Contacto:</strong> Para correcciones o información adicional documentada con fuentes verificables, favor de enviar evidencia.</p>
-            
-            <p style="margin-top: 20px; font-size: 0.85em; color: #999;">
-                Este sitio es de carácter informativo y no constituye asesoría legal ni determinaciones oficiales sobre la veracidad de las acusaciones mencionadas.
+            <p style="margin-top: 15px; font-size: 0.8em; color: #999;">
+                Este sitio es de carácter informativo y no constituye asesoría legal ni determinaciones oficiales.
             </p>
         </footer>
     </div>
