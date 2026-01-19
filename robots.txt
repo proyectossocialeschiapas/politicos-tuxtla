@@ -12,4 +12,4 @@ User-agent: Slurp
 Allow: /
 
 # Sitemap
-Sitemap: https://TU-USUARIO.github.io/TU-REPOSITORIO/sitemap.xml
+Sitemap: https://proyectossocialeschiapas.github.io/politicos-tuxtla/sitemap.xml
